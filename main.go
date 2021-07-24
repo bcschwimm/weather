@@ -63,7 +63,7 @@ func (a apiUrl) populateStruct() CurrentWeather {
 
 // printOutput method on our CurrentWeather struct formats
 // the response and prints it to the terminal
-func (c *CurrentWeather) printOutput() {
+func (c CurrentWeather) printOutput() {
 	fmt.Println(c.Name, c.Detail.Temp)
 }
 
