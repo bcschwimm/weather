@@ -1,4 +1,4 @@
-Weather Command Line Tool
+Weather Command Line Tool | GoLang example
 
 Requires OpenWeather API Key & Environment Variable named "WEATHER_KEY"
 
