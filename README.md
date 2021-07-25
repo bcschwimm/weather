@@ -6,7 +6,7 @@ Example:
 
 weather -c 90210
 
-weather -c philadelphia, pa
+weather -c "los angeles"
 
 weather metrics will be printed in fahrenheit, the terminal and we can call those using a zip code or city + state combo. 
 
@@ -14,3 +14,4 @@ TODO:
 [x] Complete custom types / methods
 [x] Write Test
 [x] Complile for Linux
+[] Update: Handle Flag Arguments like "Los Angeles, CA". three spaces are messing with parsing the argument so we need to combine.
