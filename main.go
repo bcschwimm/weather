@@ -87,7 +87,6 @@ func main() {
 
 	var citySearch = flag.String("c", "philadelphia, pa", "enter a city, state abbreviation or us zipcode to search the weather")
 	flag.Parse()
-
 	call := apiUrlString(*citySearch)
 	w := call.populateStruct()
 	w.printOutput()
