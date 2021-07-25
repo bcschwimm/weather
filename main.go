@@ -66,7 +66,7 @@ func (a apiUrl) populateStruct() CurrentWeather {
 // printOutput method on our CurrentWeather struct formats
 // the response and prints it to the terminal
 func (c CurrentWeather) printOutput() {
-	fmt.Printf("%s currently %.f degrees\n%s\n", c.Name, c.Detail.Temp, strings.Title(c.Condition[0].Description))
+	fmt.Printf("%s | Currently %.f degrees\n%s\n", c.Name, c.Detail.Temp, strings.Title(c.Condition[0].Description))
 	fmt.Printf("Feels like %.f | Minimum Tempature %.f | Maximum Tempature %.f\n", c.Detail.Feels, c.Detail.Min, c.Detail.Max)
 	fmt.Printf("Humitidy is at %.f%%\n", c.Detail.Humidity)
 	fmt.Printf("Sunrise %v | Sunset %v\n", time.Unix(int64(c.Sys.Sunrise), 0), time.Unix(int64(c.Sys.Sunset), 0))
