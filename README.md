@@ -8,9 +8,9 @@ weather -c 90210
 
 weather -c philadelphia, pa
 
-weather metrics will be printed in the terminal and we can call those using a zip code or city + state combo. 
+weather metrics will be printed in fahrenheit, the terminal and we can call those using a zip code or city + state combo. 
 
 TODO:
-Complete custom types / methods
-Write Tests
-Complile for Linux
+[x] Complete custom types / methods
+[x] Write Test
+[x] Complile for Linux
