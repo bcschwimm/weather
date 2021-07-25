@@ -65,6 +65,8 @@ func (a apiUrl) populateStruct() CurrentWeather {
 // the response and prints it to the terminal
 func (c CurrentWeather) printOutput() {
 	fmt.Println(c.Name, c.Detail.Temp)
+	fmt.Printf("Feels like: %.2f\nMinimum Tempature %.2f | Maximum Tempature %.2f\n", c.Detail.Feels, c.Detail.Min, c.Detail.Max)
+	fmt.Printf("Humitidy for today is at %.2f", c.Detail.Humidity)
 }
 
 // apiUrlString validates a user input and returns either the api
@@ -73,9 +75,9 @@ func apiUrlString(userInput string) apiUrl {
 	_, err := strconv.Atoi(userInput)
 
 	if err != nil {
-		return apiUrl(fmt.Sprintf("http://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s", userInput, os.Getenv("WEATHER_KEY")))
+		return apiUrl(fmt.Sprintf("http://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&units=imperial", userInput, os.Getenv("WEATHER_KEY")))
 	}
-	return apiUrl(fmt.Sprintf("http://api.openweathermap.org/data/2.5/weather?zip=%s&appid=%s", userInput, os.Getenv("WEATHER_KEY")))
+	return apiUrl(fmt.Sprintf("http://api.openweathermap.org/data/2.5/weather?zip=%s&appid=%s&units=imperial", userInput, os.Getenv("WEATHER_KEY")))
 }
 
 func main() {
