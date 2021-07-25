@@ -8,6 +8,8 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
+	"time"
 )
 
 // apiUrl is our custom string type for the api call
@@ -64,9 +66,10 @@ func (a apiUrl) populateStruct() CurrentWeather {
 // printOutput method on our CurrentWeather struct formats
 // the response and prints it to the terminal
 func (c CurrentWeather) printOutput() {
-	fmt.Println(c.Name, c.Detail.Temp)
-	fmt.Printf("Feels like: %.2f\nMinimum Tempature %.2f | Maximum Tempature %.2f\n", c.Detail.Feels, c.Detail.Min, c.Detail.Max)
-	fmt.Printf("Humitidy for today is at %.2f", c.Detail.Humidity)
+	fmt.Printf("%s currently %.f degrees\n%s\n", c.Name, c.Detail.Temp, strings.Title(c.Condition[0].Description))
+	fmt.Printf("Feels like %.f | Minimum Tempature %.f | Maximum Tempature %.f\n", c.Detail.Feels, c.Detail.Min, c.Detail.Max)
+	fmt.Printf("Humitidy is at %.f%%\n", c.Detail.Humidity)
+	fmt.Printf("Sunrise %v | Sunset %v\n", time.Unix(int64(c.Sys.Sunrise), 0), time.Unix(int64(c.Sys.Sunset), 0))
 }
 
 // apiUrlString validates a user input and returns either the api
