@@ -14,4 +14,5 @@
 1. [x] Complete custom types / methods
 2. [x] Write Test
 3. [x] Complile for Linux
-4. [] Update: Handle Flag Arguments like "Los Angeles, CA". three spaces are messing with parsing the argument so we need to combine.
+4. Update: Handle Flag Arguments like "Los Angeles, CA". three spaces are messing with parsing the argument so we need to combine.
+5. Pull in Forecast / Rain Y/N field.
