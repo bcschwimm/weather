@@ -1,17 +1,17 @@
-Weather Command Line Tool | GoLang example
+# Weather Command Line Tool | GoLang example
 
-Requires OpenWeather API Key & Environment Variable named "WEATHER_KEY"
+## Requires OpenWeather API Key & Environment Variable named "WEATHER_KEY"
 
-Example: 
+## Examples: 
 
-weather -c 90210
+> weather -c 90210
 
-weather -c "los angeles"
+> weather -c "los angeles"
 
-weather metrics will be printed in fahrenheit, the terminal and we can call those using a zip code or city + state combo. 
+> weather metrics will be printed in fahrenheit, the terminal and we can call those using a zip code or city + state combo. 
 
-TODO:
-[x] Complete custom types / methods
-[x] Write Test
-[x] Complile for Linux
-[] Update: Handle Flag Arguments like "Los Angeles, CA". three spaces are messing with parsing the argument so we need to combine.
+## TODO:
+1. [x] Complete custom types / methods
+2. [x] Write Test
+3. [x] Complile for Linux
+4. [] Update: Handle Flag Arguments like "Los Angeles, CA". three spaces are messing with parsing the argument so we need to combine.
