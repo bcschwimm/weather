@@ -8,7 +8,7 @@
 
 > weather -c "los angeles"
 
-> weather metrics will be printed in fahrenheit, the terminal and we can call those using a zip code or city + state combo. 
+#### weather metrics will be printed in fahrenheit, the terminal and we can call those using a zip code or city + state combo. 
 
 ## TODO:
 1. [x] Complete custom types / methods
