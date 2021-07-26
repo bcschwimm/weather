@@ -39,7 +39,7 @@ type CurrentWeather struct {
 
 // populateStruct method on our apiUrl returns
 // CurrentWeather with data from the searched city
-func (a apiUrl) populateStruct() CurrentWeather {
+func (a apiUrl) PopulateStruct() CurrentWeather {
 
 	// converting apiUrl back to string for http get
 	resp, err := http.Get(string(a))
@@ -65,7 +65,7 @@ func (a apiUrl) populateStruct() CurrentWeather {
 
 // printOutput method on our CurrentWeather struct formats
 // the response and prints it to the terminal
-func (c CurrentWeather) printOutput() {
+func (c CurrentWeather) PrintOutput() {
 	fmt.Printf("%s | Currently %.f degrees\n%s\n", c.Name, c.Detail.Temp, strings.Title(c.Condition[0].Description))
 	fmt.Printf("Feels like %.f | Minimum Tempature %.f | Maximum Tempature %.f\n", c.Detail.Feels, c.Detail.Min, c.Detail.Max)
 	fmt.Printf("Humitidy is at %.f%%\n", c.Detail.Humidity)
@@ -87,7 +87,7 @@ func main() {
 
 	var citySearch = flag.String("c", "philadelphia, pa", "enter a city, state abbreviation or us zipcode to search the weather")
 	flag.Parse()
-	call := apiUrlString(*citySearch)
-	w := call.populateStruct()
-	w.printOutput()
+	callUrl := apiUrlString(*citySearch)
+	weatherData := callUrl.PopulateStruct()
+	weatherData.PrintOutput()
 }
