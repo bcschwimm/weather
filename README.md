@@ -16,3 +16,4 @@
 3. [x] Complile for Linux
 4. Update: Handle Flag Arguments like "Los Angeles, CA". three spaces are messing with parsing the argument so we need to combine.
 5. Pull in Forecast / Rain Y/N field.
+6. Confirm APIs use of "Max and Min" temp. Is this for a 24h range or shorter period?
