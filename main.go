@@ -15,7 +15,7 @@ import (
 // apiUrl is our custom string type for the api call
 type apiUrl string
 
-// CurrentWeather struct matches the response of our open weather api
+// CurrentWeather struct matches the response of our openweather api
 type CurrentWeather struct {
 	Condition []struct {
 		Description string `json:"description"`
@@ -35,6 +35,24 @@ type CurrentWeather struct {
 	}
 
 	Name string `json:"name"`
+}
+
+// DailyWeather matches the onecall api from openweather api
+type DailyWeather struct {
+	Current struct {
+		Sunrise  int     `json:"sunrise"`
+		Sunset   int     `json:"sunset"`
+		Temp     float64 `json:"temp"`
+		Feels    float64 `json:"feels_like"`
+		Humidity float64 `json:"humidity"`
+
+		Daily []struct {
+			Temp struct {
+				Min float64 `json:"min"`
+				Max float64 `json:"max"`
+			} `json:"temp"`
+		} `json:"daily"`
+	} `json:"current"`
 }
 
 // populateStruct method on our apiUrl returns
